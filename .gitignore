@@ -1,0 +1,15 @@
+# Frontend dependencies
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Backend virtual environment
+backend/venv/
+backend/__pycache__/
+
+# IDE/Editor folders
+.vscode/
+.idea/
+
+# Environment variables file (add this if you use one for API keys)
+.env
