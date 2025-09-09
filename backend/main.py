@@ -2,12 +2,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel # pydanticからBaseModelをインポート
 
-# --- ここから追加 ---
 # フロントエンドから受け取るデータの方を定義
 class RoadmapRequest(BaseModel):
     goal: str
     current_status: str
-# --- ここまで追加 ---
 
 
 app = FastAPI()
@@ -29,7 +27,6 @@ def read_root():
     return {"message": "バックエンドサーバーは正常に起動しています"}
 
 
-# --- ここから追加 ---
 # ロードマップ生成のための新しいAPIエンドポイント
 @app.post("/generate-roadmap")
 def generate_roadmap(request: RoadmapRequest):
@@ -47,4 +44,3 @@ def generate_roadmap(request: RoadmapRequest):
             {"step": 3, "action": "目標のアプリ開発開始", "estimated_time": "5週間"},
         ]
     }
-# --- ここまで追加 ---
